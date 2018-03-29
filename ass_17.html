@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+
+        // task 1 (A)
+        var arr = [
+            { name: 'Asher', age: 22 },
+            { name: 'Zubair', age: 20 },
+            { name: 'Kashif', age: 23 },
+            { name: 'Wasif', age: 17 },
+            { name: 'Hanzala', age: 28 }
+        ]
+
+
+        arr[3] = {name: "siddiq" , age : 23};
+        console.log("########---------replace in object array 2---------#########");
+        console.log(arr[3]);
+
+
+
+
+        // task 1 (B)
+        var arr = [
+            { name: 'Asher', age: 22 },
+            { name: 'Zubair', age: 20 },
+            { name: 'Kashif', age: 23 },
+            { name: 'Wasif', age: 17 },
+            { name: 'Hanzala', age: 28 }
+        ]
+        arr.push({ name: "umair", age: "23" });
+        console.log("########---------push in object array ---------#########");
+        console.log(arr);
+
+
+
+
+
+
+        // task 1 (C)
+        var arr = [
+            { name: 'Asher', age: 22 },
+            { name: 'Zubair', age: 20 },
+            { name: 'Kashif', age: 23 },
+            { name: 'Wasif', age: 17 },
+            { name: 'Hanzala', age: 28 }
+        ]
+        delete arr[0];
+        console.log("########---------remove in object array ---------#########");
+        console.log(arr);
+
+
+
+
+        //task 1 (D)
+        var arr = [
+            { name: 'Asher', age: 22 },
+            { name: 'Zubair', age: 20 },
+            { name: 'Kashif', age: 23 },
+            { name: 'Wasif', age: 17 },
+            { name: 'Hanzala', age: 28 }
+        ]
+
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].createdAt = new Date
+        }
+        console.log("========>createdAt key has been Created<=======");
+        console.log(arr);
+
+
+
+
+
+        //----------##########   TASK 2 #########----------//
+
+        var arr = [
+            { name: 'Asher', age: 22 },
+            { name: 'Zubair', age: 20 },
+            { name: 'Kashif', age: 23 },
+            { name: 'Wasif', age: 17 },
+            { name: 'Hanzala', age: 28 }
+        ]
+
+
+        var newArr = [];
+        console.log("************EXTRACTED AGE AND NAME************");
+        for (var i = 0; i < arr.length; i++) {
+            if ((arr[i].age >= 18 && arr[i].age <= 28)) {
+                for (var j = 0; j < arr[i].name.length; j++) {
+                    if (arr[i].name[j] === "f") {
+                        newArr.push(arr[i].name);
+                        var str = arr[i].name;
+                        console.log(str)
+                        break;
+                    }
+                }
+            }
+        }
+
+
+
+        
+
+
+        //----------##########   TASK 3 #########----------//
+
+
+
+        var students = [
+            {
+                _id: 'std1',
+                name: 'Bill Gates',
+                age: 30
+            },
+            {
+                _id: 'std2',
+                name: 'Steve Jobs',
+                age: 30
+            },
+            {
+                _id: 'std3',
+                name: 'Suzanne Collins',
+                age: 30
+            }];
+
+        var courses = [
+            {
+                name: 'Maths',
+                std_id: ['std3', 'std1']
+            },
+            {
+                name: 'Computer Science',
+                std_id: ['std3', 'std2']
+            },
+            {
+                name: 'Commerce',
+                std_id: ['std1']
+            },
+        ]
+        students.map(function (obj) {
+            obj.courses = []
+        })
+        courses.forEach(function (obj, i) {
+            obj.std_id.forEach(function (val, index) {
+                students.map(function (o) {
+                    if (o._id == val) {
+                        o.courses.push(obj.name)
+                    }
+                })
+            })
+        })
+
+
+
+
+
+
+
+
+        
+    </script>
+</body>
+
+</html>
